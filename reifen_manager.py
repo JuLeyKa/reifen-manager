@@ -85,10 +85,10 @@ def effi_emoji(rating: str | float | None) -> str:
 
 # --------------------------- Header / Logo ---------------------------
 logo_path = BASE_DIR / "ramsperger_logo.png"
-col1, col2, col3 = st.columns([0.3, 2, 1.7])
+col1, col2, col3 = st.columns([1, 3, 1])  # Symmetrisch zentriert
 with col2:
     if logo_path.exists():
-        st.image(str(logo_path), width=1200)
+        st.image(str(logo_path), use_column_width=True)  # Responsive Logo
     else:
         st.warning("⚠️ Logo nicht gefunden. Lege 'ramsperger_logo.png' in den App-Ordner.")
 
